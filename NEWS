@@ -1,0 +1,112 @@
+			Dear Emacs, please make this -*-Text-*- mode!
+	**************************************************
+	*						 *
+	*	       3.3 SERIES NEWS			 *
+	*						 *
+	**************************************************
+
+
+		CHANGES IN R VERSION 3.w.0
+
+FEATURES
+
+    o	Added S4 methods "identify" and "text" for the SamplePCA class.
+
+		CHANGES IN R VERSION 3.2.0
+
+BREAKING CHANGES
+
+    o	Finished creating a separate package for the bimodalIndex
+    	function, and so removed duplicate code from here.
+
+		CHANGES IN R VERSION 3.1.0
+
+BREAKING CHANGES
+
+    o	Refactored to move the lungData set out of this package into 
+    	the newly organized "oompaData" package. 
+
+ADMINISTRATIVE
+
+    o	Changed the LICENSE to Apache 2.0.
+
+		CHANGES IN R VERSION 3.0.1
+
+GENERAL
+
+    o	Moved to R-Forge.
+
+BUG FIXES
+
+    o	Made compatible with new R check steps that verify DESCRIPTION
+        and NAMESPACE dependencies.
+
+    o	Replaced use of 'plclust' (newly deprecated in R) with 'plot'.
+
+		CHANGES IN R VERSION 3.0.0
+
+REFACTORING CHANGES
+
+    o	Removed the dependence on the PreProcess package.
+
+
+		CHANGES IN R VERSION 2.14.1
+
+BUG FIXES
+
+    o	Moved the previously added .Rout.save files to correct directory.
+
+    o	Added 'TailRank' dependency to Suggests: (used in tests).
+
+    o	Replaced platform-specific windows() method with dev.new() method
+	to invoke default graphics device instead.
+
+
+		CHANGES IN R VERSION 2.14.0
+
+NEW FEATURES
+
+    o	Added .Rout.save files for the ClassComparison tests.
+
+    o	Added test for the bimodalIndex function.
+
+    o	Created tests for ClassDiscovery from /inst/samples.
+
+    o	Moved vignettes from /inst/doc to /vignettes.
+
+    o	Added optional argument to screeplot() method.
+
+
+		CHANGES IN R VERSION 2.13.4
+
+BUG FIXES
+
+    o	Corrected spelling in documentation.
+
+
+		CHANGES IN R VERSION 2.10.0
+
+NEW FEATURES
+
+    o	Modified 'bimodalIndex' function to return proportion of
+        samples in group 1 rather than proportion in larger group.
+
+    o	Moved redgreen, jetColors, etc. into the oompaBase package.
+
+BUG FIXES
+
+    o	Fixed labeling error in 'bimodalIndex' function.
+
+		CHANGES IN R VERSION 2.9.0
+
+NEW FEATURES
+
+    o	Added support for computing the "bimodalIndex" as 
+    	defined by Wang et al.  in Cancer Informatics.
+
+    o   Added a subset of the Nature Medicine lung cancer dataset to
+        the package in order to provide meaningful examples for the
+        computation of the bimodality index.
+
+    o   Added support for namespaces.
+

@@ -1,0 +1,76 @@
+###
+### NAMESPACE
+###
+
+
+## various generics
+import(methods)
+import(mclust)
+import(oompaBase)
+import(oompaData)
+
+importFrom("grDevices", "colors", "hcl")
+importFrom("graphics", "abline", "axis", "barplot", "frame",
+           "grconvertX", "grconvertY", "layout", "legend", "mtext",
+           "par", "points", "title")
+importFrom("stats", "as.dendrogram", "as.dist", "cor", "cutree",
+           "dist", "hclust", "heatmap", "kmeans", "order.dendrogram",
+           "pchisq", "reorder", "rnorm", "sd", "var")
+
+importMethodsFrom(oompaBase,
+                  "hist", "image", "plot")
+importMethodsFrom(oompaBase,
+                  "print", "summary", "as.data.frame")
+
+exportMethods("hist", "image", "plot")
+exportMethods("summary", "as.data.frame")
+
+## cd00-colorScheme
+
+importFrom(stats, "predict")
+exportMethods("predict")
+
+importFrom(stats, "screeplot")
+exportMethods("screeplot")
+
+importFrom(cluster, "pltree", "pam")
+exportMethods("pltree")
+
+importFrom(graphics, "identify")
+importFrom(graphics, "text")
+exportMethods("identify", "text")
+
+## cd01-distance
+export("distanceMatrix")
+export("plotColoredClusters", "pcc")
+export("cluster3")
+
+## cd02-cluster
+exportClasses("ClusterTest")
+
+## cd03-bootclust
+export("cutHclust", "cutPam", "cutKmeans",
+       "repeatedKmeans", "cutRepeatedKmeans")
+exportClasses("BootstrapClusterTest")
+export("BootstrapClusterTest")
+
+## cd04-perclust
+exportClasses("PerturbationClusterTest")
+export("PerturbationClusterTest")
+
+## cd05-gene-sample-pca
+exportClasses("GenePCA", "SamplePCA")
+export("GenePCA", "SamplePCA")
+export("mahalanobisQC")
+
+## cd06-heatmap
+export("aspectHeatmap")
+
+## cd07-mosiac
+#?# exportClasses("hclust")
+exportClasses("Mosaic")
+export("Mosaic")
+
+## cd08-pcanova
+exportClasses("PCanova")
+export("PCanova")

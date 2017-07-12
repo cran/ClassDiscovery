@@ -1,0 +1,68 @@
+
+R version 3.0.2 (2013-09-25) -- "Frisbee Sailing"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(ClassDiscovery)
+Loading required package: cluster
+Loading required package: oompaBase
+> set.seed(593996)
+> dd <- matrix(rnorm(100*5, rnorm(100)), nrow=100, ncol=5)
+> distanceMatrix(dd, 'pearson')
+          1         2         3         4
+2 0.2076737                              
+3 0.2695364 0.1801450                    
+4 0.2333953 0.1927620 0.1724315          
+5 0.2913239 0.2293372 0.2168545 0.2209858
+> distanceMatrix(dd, 'euclid')
+         1        2        3        4
+2 13.68928                           
+3 15.31751 12.94784                  
+4 14.23804 13.43355 12.51983         
+5 15.01881 13.96244 13.32337 13.21688
+> distanceMatrix(dd, 'sqrt')
+          1         2         3         4
+2 0.6444745                              
+3 0.7342157 0.6002415                    
+4 0.6832208 0.6209058 0.5872504          
+5 0.7633137 0.6772550 0.6585658 0.6648094
+> distanceMatrix(dd, 'weird')
+          1         2         3         4
+2 0.6316359                              
+3 0.7882128 0.5264999                    
+4 0.7029820 0.5481066 0.4937517          
+5 0.8321969 0.6762622 0.6302502 0.6460226
+> rm(dd) # cleanup
+> 
+> # simulate data from three different groups
+> d1 <- matrix(rnorm(100*10, rnorm(100, 0.5)), nrow=100, ncol=10, byrow=FALSE)
+> d2 <- matrix(rnorm(100*10, rnorm(100, 0.5)), nrow=100, ncol=10, byrow=FALSE)
+> d3 <- matrix(rnorm(100*10, rnorm(100, 0.5)), nrow=100, ncol=10, byrow=FALSE)
+> dd <- cbind(d1, d2, d3)
+> 
+> # perform hierarchical clustering using correlation
+> hc <- hclust(distanceMatrix(dd, 'pearson'), method='average')
+> cols <- rep(c('red', 'green', 'blue'), each=10)
+> labs <- paste('X', 1:30, sep='')
+> 
+> # plot the dendrogram with color-coded groups
+> plotColoredClusters(hc, labs=labs, cols=cols)
+> 
+> #cleanup
+> rm(d1, d2, d3, dd, hc, cols, labs)
+> 
+> proc.time()
+   user  system elapsed 
+   0.59    0.09    0.68 

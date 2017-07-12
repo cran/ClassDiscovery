@@ -1,0 +1,159 @@
+
+R version 3.4.0 (2017-04-21) -- "You Stupid Darkness"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> set.seed(932451)
+> #################################################################
+> # load the data set
+> library(ClassDiscovery)
+Loading required package: cluster
+Loading required package: oompaBase
+> require(oompaData) # for the prostate cancer data set with 2000 genes
+Loading required package: oompaData
+> data(expression.data)
+> data(clinical.info)
+> # make sure the Status variable has "N"ormals as the first level
+> # Note that "T" = primary prostate tumor and "L" = lymph node metastasis
+> temp <- ordered(clinical.info$Status, c('N', 'T', 'L'))
+> clinical.info$Status <- temp
+> rm(temp)
+> 
+> #################################################################
+> # create an exprSet
+> require(Biobase)
+Loading required package: Biobase
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: 'BiocGenerics'
+
+The following objects are masked from 'package:parallel':
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following object is masked from 'package:ClassDiscovery':
+
+    as.data.frame
+
+The following object is masked from 'package:oompaBase':
+
+    as.data.frame
+
+The following objects are masked from 'package:stats':
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from 'package:base':
+
+    Filter, Find, Map, Position, Reduce, anyDuplicated, append,
+    as.data.frame, cbind, colMeans, colSums, colnames, do.call,
+    duplicated, eval, evalq, get, grep, grepl, intersect, is.unsorted,
+    lapply, lengths, mapply, match, mget, order, paste, pmax, pmax.int,
+    pmin, pmin.int, rank, rbind, rowMeans, rowSums, rownames, sapply,
+    setdiff, sort, table, tapply, union, unique, unsplit, which,
+    which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+> # create a phenoData object and an exprSet
+> vl <- data.frame(labelDescription=dimnames(clinical.info)[[2]])
+> rownames(vl) <- as.character(vl[,1])
+> pheno <- new('AnnotatedDataFrame',
++              data=clinical.info,
++              varMetadata=vl)
+> es <- new('ExpressionSet',
++           phenoData=pheno,
++           exprs=as.matrix(expression.data))
+> # we don't need the original data now that it has been
+> # incorporated into the exprSet
+> rm(expression.data)
+> rm(vl, pheno)
+> 
+> #################################################################
+> # Now we can start exercising the ClassDiscovery package
+> 
+> ##################################
+> #windows(width=14, height=7, pointsize=10)
+> par(mfrow=c(2,2))
+> cluster3(es)
+> par(mfrow=c(1,1))
+> 
+> ##################################
+> spc <- SamplePCA(es, 'Status')
+> levels(spc@splitter)
+[1] "N" "T" "L"
+> colorScheme <- c('green', 'magenta', 'red')
+> plot(spc, col=colorScheme)
+> legend(-25, -25, levels(spc@splitter), pch=15, col=colorScheme)
+> 
+> ##################################
+> metric <- 'pearson'
+> linkage <- 'complete'
+> hc <- hclust(distanceMatrix(exprs(es), metric), linkage)
+> plotColoredClusters(hc, labs=colnames(exprs(es)),
++                     col=colorScheme[as.numeric(spc@splitter)])
+> 
+> ##################################
+> if (FALSE) { # don't run; this is slow
++ bc <- BootstrapClusterTest(es, cutHclust, k = 12, nTimes=200, verbose=FALSE,
++                            metric=metric, method=linkage)
++ summary(bc)
++ hist(bc)
++ image(bc, dendrogram=hc, col=blueyellow(64))
++ }
+> 
+> ##################################
+> if (FALSE) { # don't run;  this is slow
++ pc <- PerturbationClusterTest(es, cutHclust, k = 10, nTimes=100, verbose=FALSE,
++                            noise=1, metric=metric, method=linkage)
++ summary(pc)
++ hist(pc)
++ image(pc, dendrogram=hc, col=blueyellow(64))
++ }
+> 
+> ##################################
+> # mosaic
+> 
+> mos <- Mosaic(es,center=TRUE, usecor=TRUE, geneMetric='pearson')
+> 
+> dimnames(pData(es))[[2]]
+[1] "Arrays"    "Reference" "Sample"    "Status"    "Subgroups" "ChipType" 
+> 
+> plot(mos, sampleClasses=pData(es)[,'Status'], sampleColors=colorScheme,
++      col=blueyellow(64), limits=c(-1,1), geneClasses=8)
+> 
+> if (FALSE) { # don't really need more heatmaps
++ plot(mos, sampleClasses=pData(es)[,'ChipType'], sampleColors=colorScheme,
++      col=blueyellow(64), limits=c(-1,1), geneClasses=8)
++ 
++ plot(mos, sampleClasses=pData(es)[,'Subgroups'], sampleColors=colorScheme,
++      col=blueyellow(64), limits=c(-1,1), geneClasses=8)
++ }
+> 
+> ##################################
+> # clean everything up
+> 
+> rm(es, spc, colorScheme, hc, mos)
+> 
+> proc.time()
+   user  system elapsed 
+   4.78    0.21    5.89 
