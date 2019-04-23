@@ -1,4 +1,5 @@
 library(ClassDiscovery)
+RNGversion("3.5.3")
 set.seed(547422)
 # simulate data from three different groups
 d1 <- matrix(rnorm(100*10, rnorm(100, 0.5)), nrow=100, ncol=10, byrow=FALSE)
@@ -16,7 +17,8 @@ cutPam(dd, k=3)
 cutPam(dd, k=4)
 
 cutRepeatedKmeans(dd, k=3, nTimes=10)
-cutRepeatedKmeans(dd, k=4, nTimes=10)
+crk <- cutRepeatedKmeans(dd, k=4, nTimes=10)
+sort(as.vector(table(crk))) # sme numbers, different labels on some machines
 
 # cleanup
 rm(d1, d2, d3, dd)
