@@ -1,6 +1,6 @@
 Package: ClassDiscovery
-Version: 3.3.11
-Date: 2019-04-23
+Version: 3.3.12
+Date: 2019-05-01
 Title: Classes and Methods for "Class Discovery" with Microarrays or
         Proteomics
 Author: Kevin R. Coombes
@@ -18,6 +18,6 @@ LazyLoad: yes
 biocViews: Microarray, Clustering
 URL: http://oompa.r-forge.r-project.org/
 NeedsCompilation: no
-Packaged: 2019-04-23 14:16:48 UTC; Kevin
+Packaged: 2019-05-06 12:43:58 UTC; Kevin Coombes
 Repository: CRAN
-Date/Publication: 2019-04-23 15:30:09 UTC
+Date/Publication: 2019-05-06 16:40:07 UTC
