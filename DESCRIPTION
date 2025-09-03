@@ -1,6 +1,6 @@
 Package: ClassDiscovery
-Version: 3.4.8
-Date: 2025-04-06
+Version: 3.4.9
+Date: 2025-09-03
 Title: Classes and Methods for "Class Discovery" with Microarrays or
         Proteomics
 Authors@R: person(given = c("Kevin", "R."), family = "Coombes",
@@ -18,8 +18,8 @@ LazyLoad: yes
 biocViews: Microarray, Clustering
 URL: http://oompa.r-forge.r-project.org/
 NeedsCompilation: no
-Packaged: 2025-04-07 01:37:29 UTC; kevin
+Packaged: 2025-09-03 13:35:52 UTC; kevin
 Author: Kevin R. Coombes [aut, cre]
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
 Repository: CRAN
-Date/Publication: 2025-04-07 12:00:02 UTC
+Date/Publication: 2025-09-03 14:40:10 UTC

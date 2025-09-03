@@ -1,4 +1,4 @@
-2a11c7e1909c33dd726ecad19aa6e17b *DESCRIPTION
+32c0a1437654419e209f878e04e64da7 *DESCRIPTION
 44780ee4523ecbdd15d4b8b1cd44eb8a *NAMESPACE
 c885230ea1e5c80294c30f31d118cc6f *NEWS
 c788373291f91e067bf740c8065585da *R/cd00-generics.R
@@ -11,13 +11,13 @@ cb10f6429767320db509c03673540739 *R/cd05-gene-sample-pca.R
 72bfadbb0ab832e098a5bb1a12cdffe6 *R/cd07-mosiac.R
 91b7e223a27803b0fcc6945a2451887e *R/cd08-pcanova.R
 c5d4d75e40c401195c19af6e85a93a4e *TODO
-dcc02b27775bf5ad8966998237c96b05 *build/vignette.rds
+c98a7d43c3537a7cbe3d401b882d1122 *build/vignette.rds
 cc2427d4752766df5686228d209bcf97 *inst/doc/maha-test.R
 a82dfb9978b25aefc832fc3b06d3aec9 *inst/doc/maha-test.Rnw
-83c797c4a139695e38da99ad3dbcae29 *inst/doc/maha-test.pdf
+fe8f6a464347e07591cc51bc7fb668f8 *inst/doc/maha-test.pdf
 12fdfc2d44359e6645a690b4a0945a4c *inst/doc/oompa-cd.R
 34bbf7454df0205368d9fb5ffe0458c3 *inst/doc/oompa-cd.Rnw
-405381de948fc3d3ddfc56f2d0ab8753 *inst/doc/oompa-cd.pdf
+04a1621fc3da79b6e4205491b86a5068 *inst/doc/oompa-cd.pdf
 9c1468ee3bb9df645efe2634beb4deb6 *man/cd01-0-distanceMatrix.Rd
 7022e13721942e9cb81cdfe3a7b563f2 *man/cd02-0-plotColoredClusters.Rd
 f1458cf3a56677e3edd8dd9ff0803def *man/cd02-1-cluster3.Rd
@@ -30,7 +30,7 @@ f70832c9609aa113e28efd5a884ff783 *man/cd04-0-PerturbationClusterTest-class.Rd
 df6002b85ad83b59199fc167ca31e868 *man/cd05-1-GenePCA-class.Rd
 de36215e82e47d51e2acebfaa4dc4720 *man/cd06-0-aspectHeatmap.Rd
 ef3e3ea9221c4da0820d231046af7dc2 *man/cd07-0-Mosaic-class.Rd
-56725b4cf67f6dc90bd1229f5ff1497c *man/cd08-0-PCanova-class.Rd
+e905ea4c40e083210bed0c4e2df12f4e *man/cd08-0-PCanova-class.Rd
 efcf0b1e4bde9073fca7a55eea7f8b4c *man/cd10-0-maha.Rd
 ba62872ef0c6e42544a2ae7b0fe3fc08 *tests/exprSet-example.R
 3081b6fb2a5119f2a0fdf7a640a9eba1 *tests/exprSet-example.Rout.save
