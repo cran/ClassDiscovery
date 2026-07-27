@@ -183,5 +183,3 @@ plot(SamplePCA(s))
 ###################################################
 getOption("SweaveHooks")[["fig"]]()
 plot(Mosaic(s), hExp=3, col=blueyellow(64))
-
-
