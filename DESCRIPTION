@@ -1,6 +1,6 @@
 Package: ClassDiscovery
-Version: 3.4.10
-Date: 2026-07-27
+Version: 3.4.11
+Date: 2026-09-24
 Title: Classes and Methods for "Class Discovery" with Microarrays or
         Proteomics
 Authors@R: person(given = c("Kevin", "R."), family = "Coombes",
@@ -10,16 +10,16 @@ Imports: methods, stats, graphics, grDevices, mclust, oompaData,
         Biobase, utils
 Suggests: xtable
 Description: Defines the classes used for "class discovery" problems
-  in the OOMPA project (<http://oompa.r-forge.r-project.org/>). Class
+  in the OOMPA project (<http://silicovore.com/OOMPA/index.html>). Class
   discovery primarily consists of unsupervised clustering methods with
   attempts to assess their statistical significance. 
 License: Apache License (== 2.0)
 LazyLoad: yes
 biocViews: Microarray, Clustering
-URL: http://oompa.r-forge.r-project.org/
+URL: http://silicovore.com/OOMPA/index.html
 NeedsCompilation: no
-Packaged: 2026-07-27 17:38:54 UTC; KRC
+Packaged: 2026-09-24 13:40:39 UTC; KRC
 Author: Kevin R. Coombes [aut, cre]
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
 Repository: CRAN
-Date/Publication: 2026-07-27 19:00:02 UTC
+Date/Publication: 2026-09-24 17:20:02 UTC

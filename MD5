@@ -1,4 +1,4 @@
-90f0b0fb0f943fe11b09e6da21ee5c76 *DESCRIPTION
+d4aaeb5e7c84a92773225739de42b2e6 *DESCRIPTION
 560f209adc6e88deca65ce22eca81c49 *NAMESPACE
 c885230ea1e5c80294c30f31d118cc6f *NEWS
 c788373291f91e067bf740c8065585da *R/cd00-generics.R
@@ -11,13 +11,13 @@ cb10f6429767320db509c03673540739 *R/cd05-gene-sample-pca.R
 72bfadbb0ab832e098a5bb1a12cdffe6 *R/cd07-mosiac.R
 91b7e223a27803b0fcc6945a2451887e *R/cd08-pcanova.R
 c5d4d75e40c401195c19af6e85a93a4e *TODO
-728b90e9a7b85c091622dc1b98096ce7 *build/vignette.rds
+e32eed016882d59034794e2cbf4eb0ff *build/vignette.rds
 5df5cb4421b73ef33c545371034dea81 *inst/doc/maha-test.R
 a82dfb9978b25aefc832fc3b06d3aec9 *inst/doc/maha-test.Rnw
-f86bde956a7b728ba7287952c0a71109 *inst/doc/maha-test.pdf
+f57f1122fd1eb95169ae8f761ff76c80 *inst/doc/maha-test.pdf
 87202ee263f92aa2a5e09a62f41b9b3a *inst/doc/oompa-cd.R
 34bbf7454df0205368d9fb5ffe0458c3 *inst/doc/oompa-cd.Rnw
-8b8e462b3e189883b14c48e5051ab9b9 *inst/doc/oompa-cd.pdf
+ed51db02c87fd28420e5f1434c53d74b *inst/doc/oompa-cd.pdf
 9c1468ee3bb9df645efe2634beb4deb6 *man/cd01-0-distanceMatrix.Rd
 7022e13721942e9cb81cdfe3a7b563f2 *man/cd02-0-plotColoredClusters.Rd
 f1458cf3a56677e3edd8dd9ff0803def *man/cd02-1-cluster3.Rd
